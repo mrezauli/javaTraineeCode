@@ -19,9 +19,9 @@ public class Trainee {
         
     private String dob;
         
-    private int attendedClass;
+    private double attendedClass;
 
-    private int totalClass;
+    private double totalClass;
     
     public String getName() {
         return name;
@@ -55,30 +55,30 @@ public class Trainee {
         this.dob = dob;
     }
 
-    public int getAttendedClass() {
+    public double getAttendedClass() {
         return attendedClass;
     }
 
-    public void setAttendedClass(int attendedClass) {
+    public void setAttendedClass(double attendedClass) {
         this.attendedClass = attendedClass;
     }
 
-    public int getTotalClass() {
+    public double getTotalClass() {
         return totalClass;
     }
 
-    public void setTotalClass(int totalClass) {
+    public void setTotalClass(double totalClass) {
         this.totalClass = totalClass;
     }
     
     public double percentageOfAttendedClass () {
-        double c = (double) ( this.attendedClass / this.totalClass );
-        double p =  (double) ( c * 100);
+        double c = this.attendedClass / this.totalClass ;
+        double p =  c * 100;
         
         return p;
     }
 
-    public Trainee(String name, String contactAddress, String telephone, String dob, int attendedClass, int totalClass) {
+    public Trainee(String name, String contactAddress, String telephone, String dob, double attendedClass, double totalClass) {
         this.name = name;
         this.contactAddress = contactAddress;
         this.telephone = telephone;
@@ -93,15 +93,9 @@ public class Trainee {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Trainee to = new Trainee("rezaul", "demra", "017", "2-8-1993", 4, 78);
+        Trainee to = new Trainee("rezaul", "demra", "017", "2-8-1993", 40, 100);
                
-        double myDouble = to.percentageOfAttendedClass();
-        
-        String name = to.getName();
-        
-        System.out.println(myDouble);
-        
-        System.out.println(name);
+        System.out.println( "percenteage of trainee " + to.getName() + " is " + to.percentageOfAttendedClass() + "%");
     }
     
 }
